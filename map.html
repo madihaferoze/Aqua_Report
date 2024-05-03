@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your additional CSS styles here */
+        #map {
+            height: 400px; /* Adjust the height as needed */
+            width: 100%; /* Adjust the width as needed */
+        }
+    </style>
+    <!-- Add the Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm2Y_3IL9yFm-wayq-Z9vCu_iOQ-sRtw4&libraries=places"></script>
+    <!-- Replace "YOUR_API_KEY" with your actual Google Maps API key -->
+    <!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-brand">AquaReport</div>
+    <div class="navbar-icons">
+        <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+        <span class="icon"><i class="fas fa-bell"></i></span>
+        <a href="homepage.html" class="home-button">Home</a>
+    </div>
+</nav>
+
+<!-- Map container -->
+<!-- Map container -->
+<div id="map"></div>
+
+<script>
+    // Function to initialize and display the map
+    function initMap() {
+        // Get the reported issues from local storage or a backend API
+        var reportedIssues = JSON.parse(localStorage.getItem("reportedIssues")) || [];
+
+        // Create a new map object
+        var map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 40.7128, lng: -74.0060 }, // Example: New York City coordinates
+            zoom: 10 // Adjust the zoom level as needed
+        });
+
+        // Add markers for reported issues
+        reportedIssues.forEach(function(issue) {
+            var marker = new google.maps.Marker({
+                position: issue.position,
+                map: map,
+                title: "Reported Issue" // Tooltip text when hovering over the marker
+            });
+
+            // Add info window for each marker
+            var infowindow = new google.maps.InfoWindow({
+                content: issue.description
+            });
+
+            // Show info window when marker is clicked
+            marker.addListener("click", function() {
+                infowindow.open(map, marker);
+            });
+        });
+    }
+</script>
+
+
+<!-- Load the map after the page has fully loaded -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm2Y_3IL9yFm-wayq-Z9vCu_iOQ-sRtw4&callback=initMap"></script>
+<!-- Replace "YOUR_API_KEY" with your actual Google Maps API key -->
+
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyC1IqrU171lM-ULOBQs2I70zVP98ik2xXA",
+        authDomain: "aqua-report-33e18.firebaseapp.com",
+        projectId: "aqua-report-33e18",
+        storageBucket: "aqua-report-33e18.appspot.com",
+        messagingSenderId: "758473544852",
+        appId: "1:758473544852:web:c88ab0e4931d02edbf5081",
+        measurementId: "G-G20D1MX3B2"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
