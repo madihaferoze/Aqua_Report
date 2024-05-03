@@ -1,0 +1,278 @@
+/* CSS code (styles.css) */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0051ff;
+}
+section .wave
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;   
+    height: 100px;
+    background: url(wave.png);
+    background-size: 1000px 100px;
+}
+section .wave.wave1
+{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+section .wave.wave2
+{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+section .wave.wave3
+{
+    animation: animate2 15s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+section .wave.wave4
+{
+    animation: animate2 15s linear infinite;
+    z-index: 998;
+    opacity: 0.7;
+    animation-delay: -3s;
+    bottom: 8px;
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: 1000px;
+    }
+}
+@keyframes animate2
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: -1000px;
+    }
+}
+@keyframes animate3
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: -500px;
+    }
+}
+@keyframes animate4
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: -700px;
+    }
+}
+/* Container styles */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #000000;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styles */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Link styles */
+.signup-link {
+    text-align: center;
+}
+
+.signup-link a {
+    color: #007bff;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+/* styles.css */
+
+/* Navbar */
+.navbar {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Camera Preview */
+.camera-preview {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#camera-preview {
+    width: 100%;
+    border: 2px solid #ccc;
+}
+
+/* Buttons */
+button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #000000;
+}
+
+/* Checkboxes */
+.relevant-problems {
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.checkboxes {
+    display: flex;
+}
+
+.left-checkboxes, .right-checkboxes {
+    flex: 1;
+}
+
+/* Location */
+.location {
+    position: centers;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+#location {
+    width: calc(100% - 30px);
+    padding-right: 30px;
+}
+
+.fa-map-marker-alt {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+/* Buttons Container */
+.buttons {
+    text-align: center;
+}
+#camera-preview {
+    width: 100%;
+    max-width: 300px; /* Set the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #ccc;
+}
+a.home-button{
+    color: #000000;
+}
